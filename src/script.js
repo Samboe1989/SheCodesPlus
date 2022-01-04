@@ -42,6 +42,10 @@ function formatDay(timestamp) {
   return days[day];
 }
 
+let now = new Date();
+let dateTimeElement = document.querySelector(".dateTime");
+dateTimeElement.innerHTML = formateDate(now);
+
 //Search function
 
 function showWeather(response) {
