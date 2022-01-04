@@ -44,8 +44,7 @@ function formatDay(timestamp) {
 
 let now = new Date();
 let dateTimeElement = document.querySelector(".dateTime");
-dateTimeElement.innerHTML = formateDate(now);
-
+dateTimeElement.innerHTML = formatDate(now);
 //Search function
 
 function showWeather(response) {
