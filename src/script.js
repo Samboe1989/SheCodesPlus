@@ -55,6 +55,8 @@ function showWeather(response) {
   let description = document.querySelector("#description");
   let currentTimeDate = document.querySelector(".dateTime");
 
+  celsiusTemperature = response.data.main.temp;
+
   currentCity.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   currentTemperature.innerHTML = `${Math.round(response.data.main.temp)} C°`;
   humidity.innerHTML = `Humidity:${response.data.main.humidity}%`;
@@ -92,3 +94,30 @@ function getLocation(event) {
 
 let locationButton = document.querySelector("#currentLocationButton");
 locationButton.addEventListener("click", getLocation);
+
+//convert fahrenheit to celcius
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  currentTemperature.innerHTML = `${Math.round(fahrenheitTemperature)} °F`;
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let currentTemperature = document.querySelector("#temp");
+  currentTemperature.innerHTML = `${Math.round(celsiusTemperature)} °C`;
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);

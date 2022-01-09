@@ -27,7 +27,7 @@ h2 {
   text-align: center;
   padding-bottom: 5px;
   position: relative;
-  bottom: 50px;
+  bottom: 65px;
   left: 100px;
   background-color: white;
   font-family: "Gochi Hand";
@@ -70,7 +70,7 @@ form {
   padding: 10px;
   position: relative;
   left: 80px;
-  bottom: 70px;
+  bottom: 80px;
   background-color: white;
   padding: 0;
 }
@@ -78,6 +78,7 @@ form {
 .actual-temp {
   position: relative;
   right: 30px;
+  bottom: 20px;
 }
 
 .actual-humwin {
@@ -87,7 +88,7 @@ form {
   text-align: center;
   position: relative;
   left: 100px;
-  bottom: 52px;
+  bottom: 65px;
   background-color: white;
   font-family: "Gochi Hand";
 }
@@ -107,7 +108,7 @@ form {
   margin-top: 3px;
   position: relative;
   left: 100px;
-  bottom: 50px;
+  bottom: 60px;
   background-color: white;
   font-size: 20px;
   font-family: "Gochi Hand";
@@ -119,6 +120,24 @@ form {
   bottom: 40px;
   font-family: "Gochi Hand";
   font-size: 18px;
+  text-decoration: none;
+}
+
+.active {
+  color: #132743;
+  cursor: default;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+.fahrenheit {
+  color: #132743;
+  cursor: default;
+  text-decoration: none;
 }
 
 .big-circle {
@@ -270,4 +289,11 @@ form {
 #fahrenheit:hover {
   font-weight: bold;
   cursor: pointer;
+}
+
+#temp {
+  font-weight: 400;
+  font-size: 40px;
+  color: #132743;
+  font-family: "Gochi Hand";
 }
