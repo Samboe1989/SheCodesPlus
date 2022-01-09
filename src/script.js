@@ -121,3 +121,14 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+// Change weather icon
+
+function changeImg(description) {
+  if (description === "few clouds") {
+    return (document.getElementById("actualWeatherImg").src =
+      "Images/Rainy2.jpg");
+  }
+}
+
+let description = response.data.weather[0].description;
