@@ -153,57 +153,48 @@ form {
 }
 
 .first-image {
-  width: 150px;
   border: solid 2px #132743;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   display: block;
   margin: 0 auto;
-  padding: 1px;
 }
 
 .second-image {
   border: solid 2px #132743;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   display: block;
   margin: 0 auto;
-  padding: 1px;
 }
 
 .third-image {
-  width: 100px;
   border: solid 2px #132743;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   display: block;
   margin: 0 auto;
-  padding: 1px;
 }
 
 .fourth-image {
-  width: 150px;
   border: solid 2px #132743;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   display: block;
   margin: 0 auto;
-  padding: 1px;
 }
 
 .fifth-image {
-  width: 150px;
   border: solid 2px #132743;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   display: block;
   margin: 0 auto;
-  padding: 1px;
 }
 
 .first-temp {
