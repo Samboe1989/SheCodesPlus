@@ -54,6 +54,7 @@ function showWeather(response) {
   let windSpeed = document.querySelector("#windSpeed");
   let description = document.querySelector("#description");
   let currentTimeDate = document.querySelector(".dateTime");
+  let iconElement = document.querySelector("#actualWeatherImg");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -63,6 +64,11 @@ function showWeather(response) {
   windSpeed.innerHTML = `Wind:${Math.round(response.data.wind.speed)}Km/h`;
   description.innerHTML = response.data.weather[0].description;
   currentTimeDate.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function searchCity(event) {
@@ -81,7 +87,6 @@ function showLocation(position) {
   let lon = position.coords.longitude;
   let apiKey = "6d9d93b7d32e34850e611e89547fc660";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl, "jujhuiuh");
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -123,12 +128,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 // Change weather icon
-
-function changeImg(description) {
-  if (description === "few clouds") {
-    return (document.getElementById("actualWeatherImg").src =
-      "Images/Rainy2.jpg");
-  }
-}
-
-let description = response.data.weather[0].description;
