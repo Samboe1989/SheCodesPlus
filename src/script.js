@@ -45,6 +45,34 @@ function formatDay(timestamp) {
 let now = new Date();
 let dateTimeElement = document.querySelector(".dateTime");
 dateTimeElement.innerHTML = formatDate(now);
+
+//display forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img class="first-image" src="Images/mist.jpg" alt="Sunny" />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max">
+            HI 14° <br />
+          </span>
+          <span class="weather-forecast-temperature-min">LO 3°</span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 //Search function
 
 function showWeather(response) {
@@ -127,3 +155,17 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+// Change weather icon
+
+function changeImg() {
+  let weatherDescription = document.querySelector("#description");
+  let actualweatherImg = document.querySelector("#actualWeatherImg");
+
+  if (weatherDescription === "mist");
+  {
+    actualweatherImg.setAttribute("src", "images/Rainy2.jpg");
+  }
+}
+
+displayForecast();
