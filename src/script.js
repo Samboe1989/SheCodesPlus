@@ -89,7 +89,7 @@ function displayForecast(response) {
         <div class="weather-forecast-date"><strong>${formatDay(
           forecastDay.dt
         )}</strong></div>
-       <div><img class="first-image" src="${iconMap[weatherCondition]}"></div>
+       <div><img class="first-image" src="${iconMap[weatherCondition]}"> </div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"><strong>
              ${Math.round(forecastDay.temp.max)}° </strong> /
@@ -127,10 +127,14 @@ function showWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  currentCity.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  currentTemperature.innerHTML = `${Math.round(response.data.main.temp)} C°`;
-  humidity.innerHTML = `Humidity:${response.data.main.humidity}%`;
-  windSpeed.innerHTML = `Wind:${Math.round(response.data.wind.speed)}Km/h`;
+  currentCity.innerHTML = `<strong>${response.data.name}</strong>, ${response.data.sys.country}`;
+  currentTemperature.innerHTML = `<strong>${Math.round(
+    response.data.main.temp
+  )}</strong> C°`;
+  humidity.innerHTML = `<strong>Humidity</strong>:${response.data.main.humidity}%`;
+  windSpeed.innerHTML = `<strong>Wind:</strong>${Math.round(
+    response.data.wind.speed
+  )}Km/h`;
   weatherDescription.innerHTML = response.data.weather[0].description;
   currentTimeDate.innerHTML = formatDate(response.data.dt * 1000);
   mainIcon.src = `${iconMap[weatherCondition]}`;
@@ -188,14 +192,14 @@ let apiKey = "6d9d93b7d32e34850e611e89547fc660";
 let celsiusTemperature = null;
 let city = "Barcelona";
 let iconMap = {
-  Rain: "src/Images/rain.jpg",
-  Drizzle: "src/Images/rain.jpg",
-  Thunderstorm: "src/Images/thunderstorm.jpg",
-  Snow: "src/Images/snow.jpg",
-  Clear: "src/Images/mist.jpg",
-  Cloudy: "src/Images/brokenclouds.jpg",
-  Mist: "src/Images/scatteredclouds.jpg",
-  Haze: "src/Images/fewclouds.jpg",
+  Rain: "Images/rain.png",
+  Drizzle: "Images/lightrain.png",
+  Thunderstorm: "Images/thunder.png",
+  Snow: "Images/snow.png",
+  Clear: "Images/clearsky.png",
+  Clouds: "Images/cloudy.png",
+  Mist: "Images/mist.png",
+  Haze: "Images/mist.png",
 };
 
 // Button event listeners
