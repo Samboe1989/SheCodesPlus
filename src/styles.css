@@ -14,7 +14,7 @@ h1 {
   position: relative;
   top: 100px;
   left: 90px;
-  background-color: white;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
   font-family: "Gochi Hand";
   color: #132743;
   text-decoration: none;
@@ -22,16 +22,15 @@ h1 {
 
 h2 {
   color: #132743;
-  border: solid 2px #132743;
   width: 280px;
   text-align: center;
   padding-bottom: 5px;
   position: relative;
   bottom: 65px;
   left: 100px;
-  background-color: white;
   font-family: "Gochi Hand";
   font-size: 20px;
+  font-weight: 17px;
 }
 
 form {
@@ -71,7 +70,7 @@ form {
   position: relative;
   left: 80px;
   bottom: 80px;
-  background-color: white;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
   padding: 20px;
 }
 
@@ -89,13 +88,13 @@ form {
   position: relative;
   left: 100px;
   bottom: 70px;
-  background-color: white;
+  background-color: #badbc9;
   font-family: "Gochi Hand";
 }
 
 .actual-humwin p {
   margin-bottom: 1px;
-  background-color: white;
+  background-color: #badbc9;
   font-size: 18px;
   font-family: "Gochi Hand";
 }
@@ -109,7 +108,7 @@ form {
   position: relative;
   left: 100px;
   bottom: 70px;
-  background-color: white;
+  background-color: #badbc9;
   font-size: 20px;
   font-family: "Gochi Hand";
 }
@@ -153,12 +152,12 @@ form {
 }
 
 .first-image {
-  border: solid 2px #132743;
   border-radius: 50%;
-  height: 90px;
-  width: 90px;
+  height: 70px;
+  width: 70px;
   display: block;
   margin: 0 auto;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
 }
 
 .footer {

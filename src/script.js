@@ -84,18 +84,20 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col">
-        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <div class="weather-forecast-date"><strong>${formatDay(
+          forecastDay.dt
+        )}</strong></div>
         <img class="first-image" src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" 
         alt="Sunny"/>
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max">
-            HI ${Math.round(forecastDay.temp.max)}° <br />
+          <span class="weather-forecast-temperature-max"><strong>
+             ${Math.round(forecastDay.temp.max)}° </strong> /
           </span>
-          <span class="weather-forecast-temperature-min">LO ${Math.round(
+          <span class="weather-forecast-temperature-min"> ${Math.round(
             forecastDay.temp.min
-          )}°</span>
+          )}°C</span>
         </div>
       </div>
   `;
@@ -142,6 +144,8 @@ function showWeather(response) {
 
   getForecast(response.data.coord);
 }
+
+//Image map
 
 function searchCity(event) {
   event.preventDefault();
@@ -191,9 +195,6 @@ let celsiusTemperature = null;
 let city = "Barcelona";
 
 // Button event listeners
-
-let locationButton = document.querySelector("#currentLocationButton");
-locationButton.addEventListener("click", getLocation);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
