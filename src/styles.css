@@ -82,6 +82,7 @@ form {
 .actual-humwin {
   color: #132743;
   border: solid 2px #132743;
+  background-color: #badbc9;
   border-radius: 3%;
   width: 350px;
   text-align: center;
@@ -95,11 +96,13 @@ form {
   margin-bottom: 1px;
   font-size: 18px;
   font-family: "Gochi Hand";
+  background-color: #badbc9;
 }
 
 .dateTime {
   color: #132743;
   border: solid 2px #132743;
+  background-color: #badbc9;
   border-radius: 3%;
   width: 280px;
   text-align: center;
