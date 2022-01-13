@@ -78,8 +78,10 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
+
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
+      let weatherCondition = forecastDay.weather[0].main;
       forecastHTML =
         forecastHTML +
         `
@@ -87,10 +89,7 @@ function displayForecast(response) {
         <div class="weather-forecast-date"><strong>${formatDay(
           forecastDay.dt
         )}</strong></div>
-        <img class="first-image" src="http://openweathermap.org/img/wn/${
-          forecastDay.weather[0].icon
-        }@2x.png" 
-        alt="Sunny"/>
+       <div><img class="first-image" src="${iconMap[weatherCondition]}"></div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"><strong>
              ${Math.round(forecastDay.temp.max)}° </strong> /
@@ -109,10 +108,8 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "6d9d93b7d32e34850e611e89547fc660";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -123,9 +120,10 @@ function showWeather(response) {
   let currentTemperature = document.querySelector("#temp");
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#windSpeed");
-  let description = document.querySelector("#description");
+  let weatherDescription = document.querySelector("#description");
   let currentTimeDate = document.querySelector(".dateTime");
-  let iconElement = document.querySelector("#actualWeatherImg");
+  let mainIcon = document.querySelector(`#actualWeatherImg`);
+  let weatherCondition = response.data.weather[0].main;
 
   celsiusTemperature = response.data.main.temp;
 
@@ -133,14 +131,10 @@ function showWeather(response) {
   currentTemperature.innerHTML = `${Math.round(response.data.main.temp)} C°`;
   humidity.innerHTML = `Humidity:${response.data.main.humidity}%`;
   windSpeed.innerHTML = `Wind:${Math.round(response.data.wind.speed)}Km/h`;
-  description.innerHTML = response.data.weather[0].description;
+  weatherDescription.innerHTML = response.data.weather[0].description;
   currentTimeDate.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-
-  iconElement.setAttribute("alt", response.data.weather[0].description);
+  mainIcon.src = `${iconMap[weatherCondition]}`;
+  console.log(weatherCondition);
 
   getForecast(response.data.coord);
 }
@@ -193,6 +187,16 @@ function showCelsiusTemperature(event) {
 let apiKey = "6d9d93b7d32e34850e611e89547fc660";
 let celsiusTemperature = null;
 let city = "Barcelona";
+let iconMap = {
+  Rain: "src/Images/rain.jpg",
+  Drizzle: "src/Images/rain.jpg",
+  Thunderstorm: "src/Images/thunderstorm.jpg",
+  Snow: "src/Images/snow.jpg",
+  Clear: "src/Images/mist.jpg",
+  Cloudy: "src/Images/brokenclouds.jpg",
+  Mist: "src/Images/scatteredclouds.jpg",
+  Haze: "src/Images/fewclouds.jpg",
+};
 
 // Button event listeners
 
