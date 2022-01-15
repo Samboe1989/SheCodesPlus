@@ -39,7 +39,7 @@ form {
   font-family: "Gochi Hand";
   color: #132743;
   position: relative;
-  bottom: 20px;
+  bottom: 15px;
   font-size: 15px;
 }
 
@@ -140,6 +140,15 @@ form {
   text-decoration: none;
 }
 
+.message {
+  color: #132743;
+  position: relative;
+  bottom: 30px;
+  margin: 0;
+  font-family: "Gochi Hand", cursive;
+  font-size: 30px;
+}
+
 .active {
   color: #132743;
   cursor: default;
@@ -197,14 +206,17 @@ form {
 }
 
 .nightlight {
-  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 
 .dayLight {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.weather-forecast {
+  color: #132743;
+  font-family: "Gochi Hand";
 }
 
 #celsius {

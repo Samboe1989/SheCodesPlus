@@ -127,6 +127,7 @@ function showWeather(response) {
   let weatherCondition = response.data.weather[0].main;
   let nightIcon = response.data.weather[0].icon;
   let backGroundImg = document.querySelector(".backGround");
+  let message = document.querySelector("#message");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -157,11 +158,13 @@ function showWeather(response) {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.add("nightLight");
+    message.innerHTML = "Have a good night! 🌙";
   } else {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.remove("nightlight");
     backGroundImg.classList.add("daylight");
+    message.innerHTML = "Have a good Day! 😊";
   }
 
   getForecast(response.data.coord);
