@@ -94,9 +94,8 @@ function displayForecast(response) {
        </div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"><strong>
-             ${Math.round(forecastDay.temp.max)}° </strong> /
-          </span>
-          <span class="weather-forecast-temperature-min"> ${Math.round(
+             ${Math.round(forecastDay.temp.max)}</strong></span>
+          <span class="weather-forecast-temperature-min">/${Math.round(
             forecastDay.temp.min
           )}°C</span> <br/>💧${Math.round(forecastDay.humidity)}%
         </div>
@@ -126,6 +125,8 @@ function showWeather(response) {
   let currentTimeDate = document.querySelector(".dateTime");
   let mainIcon = document.querySelector(`#actualWeatherImg`);
   let weatherCondition = response.data.weather[0].main;
+  let nightIcon = response.data.weather[0].icon;
+  let backGroundImg = document.querySelector(".backGround");
 
   celsiusTemperature = response.data.main.temp;
 
@@ -141,6 +142,27 @@ function showWeather(response) {
   currentTimeDate.innerHTML = formatDate(response.data.dt * 1000);
   mainIcon.src = `${iconMap[weatherCondition]}`;
   console.log(weatherCondition);
+
+  if (
+    nightIcon === "01n" ||
+    nightIcon === "02n" ||
+    nightIcon === "03n" ||
+    nightIcon === "04n" ||
+    nightIcon === "09n" ||
+    nightIcon === "10n" ||
+    nightIcon === "11n" ||
+    nightIcon === "13n" ||
+    nightIcon === "50n"
+  ) {
+    document.querySelector(".backGround").style.backgroundImage =
+      "url('images/nightbackground.jpg')";
+    backGroundImg.classList.add("nightLight");
+  } else {
+    document.querySelector(".backGround").style.backgroundImage =
+      "url('images/nightbackground.jpg')";
+    backGroundImg.classList.remove("nightlight");
+    backGroundImg.classList.add("daylight");
+  }
 
   getForecast(response.data.coord);
 }
@@ -169,8 +191,6 @@ function getLocation(event) {
 }
 
 navigator.geolocation.getCurrentPosition(showLocation);
-let currentButton = document.querySelector("#currentLocationButton");
-currentButton.addEventListener("click", getLocation);
 
 //convert fahrenheit to celcius
 
@@ -217,3 +237,6 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", searchCity);
+
+let currentButton = document.querySelector("#currentLocationButton");
+currentButton.addEventListener("click", getLocation);
