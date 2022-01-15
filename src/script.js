@@ -42,7 +42,7 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
 
-  return `${day}, ${todayDate} ${month} </br> ${hours}:${minutes}`;
+  return `${day}, ${todayDate} ${month} </br> 🕒${hours}:${minutes}`;
 }
 
 function formatDay(timestamp) {
@@ -86,17 +86,19 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col">
-        <div class="weather-forecast-date"><strong>${formatDay(
-          forecastDay.dt
-        )}</strong></div>
-       <div><img class="first-image" src="${iconMap[weatherCondition]}"> </div>
+        <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
+        <div class= "borderImg">
+       <div><img class="first-image" src="${
+         iconMap[weatherCondition]
+       }" width="70px"> </div>
+       </div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max"><strong>
              ${Math.round(forecastDay.temp.max)}° </strong> /
           </span>
           <span class="weather-forecast-temperature-min"> ${Math.round(
             forecastDay.temp.min
-          )}°C</span>
+          )}°C</span> <br/>💧${Math.round(forecastDay.humidity)}%
         </div>
       </div>
   `;
@@ -131,8 +133,8 @@ function showWeather(response) {
   currentTemperature.innerHTML = `<strong>${Math.round(
     response.data.main.temp
   )}</strong> C°`;
-  humidity.innerHTML = `<strong>Humidity</strong>:${response.data.main.humidity}%`;
-  windSpeed.innerHTML = `<strong>Wind:</strong>${Math.round(
+  humidity.innerHTML = `<strong>Humidity</strong>:💧${response.data.main.humidity}%`;
+  windSpeed.innerHTML = `<strong>Wind:</strong>🍃${Math.round(
     response.data.wind.speed
   )}Km/h`;
   weatherDescription.innerHTML = response.data.weather[0].description;
@@ -163,9 +165,12 @@ function showLocation(position) {
 
 function getLocation(event) {
   event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showLocation);
 }
 
 navigator.geolocation.getCurrentPosition(showLocation);
+let currentButton = document.querySelector("#currentLocationButton");
+currentButton.addEventListener("click", getLocation);
 
 //convert fahrenheit to celcius
 

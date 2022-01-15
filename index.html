@@ -28,13 +28,14 @@
         <div class="actual-temp">
           <h1 id="temp"><strong></strong>13°C</h1>
         </div>
-        <img id="actualWeatherImg" class="img-actual-weather" src="Images/clearsky.jpg" alt="Cloudy" />
-
-        <h2 class="city" id="currentCity">Barcelona</h2>
+        <div class="border-actual-img">
+        <img id="actualWeatherImg" class="img-actual-weather" src="Images/clearsky.jpg" alt="Cloudy" width="140px" />
+        </div>
+        <h2 class="city" id="currentCity"></h2>
 
         <div class="actual-humwin">
-          <h3 id="description">Clear Sky</h3>
-          <p><span id="humidity"><strong>Humidity:</strong>49%</span> &nbsp;&nbsp;&nbsp; <span id="windSpeed"><strong>Wind:</strong> 9km/h</span</p>
+          <h3 id="description"></h3>
+          <p><span id="humidity"><strong></strong></span> &nbsp;&nbsp;&nbsp; <span id="windSpeed"><strong></strong></span</p>
         </div>
 
         <p class= "dateTime">
@@ -54,7 +55,8 @@
           autofocus="on"
           id="cityInput"
         />
-        <button class="searchButton" id="citySeach" type="submit" value="Search"><i>Search</i></button>
+        <button class="searchButton" id="citySeach" type="submit" value="Search"><i>🔎</i></button>
+        <button id="currentLocationButton" type="submit">📍</button>
         
       </form>
 
@@ -64,7 +66,9 @@
         <div class="row">
           <div class="col-2">
             <div class="weather-forecast-date">Monday</div>
-            <div><img class="first-image" src="Images/mist.jpg" alt="Sunny" /></div>
+            <div class= "borderImg">
+            <div><img class="first-image" src="Images/mist.png" alt="Sunny" width="70px" /></div>
+            </div>
               <div class="weather-forecast-temperatures">
               <span class="weather-forecast-temperature-max">
               HI 14° <br />
