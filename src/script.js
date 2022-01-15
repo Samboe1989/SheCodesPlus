@@ -158,13 +158,13 @@ function showWeather(response) {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.add("nightLight");
-    message.innerHTML = "Have a good night! 🌙";
+    message.innerHTML = "Have a good night Júlia! 🌙";
   } else {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.remove("nightlight");
     backGroundImg.classList.add("daylight");
-    message.innerHTML = "Have a good Day! 😊";
+    message.innerHTML = "Have a good Day Júlia! 😊";
   }
 
   getForecast(response.data.coord);
