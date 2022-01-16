@@ -161,7 +161,7 @@ function showWeather(response) {
     message.innerHTML = "Have a good night! 🌙";
   } else {
     document.querySelector(".backGround").style.backgroundImage =
-      "url('images/nightbackground.jpg')";
+      "url('images/daybackground.jpg')";
     backGroundImg.classList.remove("nightlight");
     backGroundImg.classList.add("daylight");
     message.innerHTML = "Have a nice day! 😊";
