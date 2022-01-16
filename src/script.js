@@ -94,10 +94,10 @@ function displayForecast(response) {
        </div>
         <div class="weather-forecast-temperatures">
           <span class="weather-forecast-temperature-max">🌡️<strong>
-             ${Math.round(forecastDay.temp.max)}°</strong></span>
+             ${Math.round(forecastDay.temp.max)}<small>°</small></strong></span>
           <span class="weather-forecast-temperature-min">/${Math.round(
             forecastDay.temp.min
-          )}°C</span> <br/>💧${Math.round(forecastDay.humidity)}%
+          )}<small>°</small>C</span> <br/>💧${Math.round(forecastDay.humidity)}%
         </div>
       </div>
   `;
@@ -134,7 +134,7 @@ function showWeather(response) {
   currentCity.innerHTML = `<strong>${response.data.name}</strong>, ${response.data.sys.country}`;
   currentTemperature.innerHTML = `<small>🌡️</small><strong>${Math.round(
     response.data.main.temp
-  )}</strong>°C`;
+  )}</strong><small>°</small>C`;
   humidity.innerHTML = `<strong>Humidity</strong>:💧${response.data.main.humidity}%`;
   windSpeed.innerHTML = `<strong>Wind:</strong>🍃${Math.round(
     response.data.wind.speed

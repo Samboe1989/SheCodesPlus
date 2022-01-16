@@ -219,6 +219,7 @@ form {
 }
 
 .weather-forecast {
+  font-size: 18px;
   color: #132743;
   font-family: "Gochi Hand";
 }
