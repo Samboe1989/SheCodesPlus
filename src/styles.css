@@ -8,9 +8,9 @@ h1 {
   text-align: center;
   border: solid 3px #132743;
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
-  padding: 30px 0px 0px 0px;
+  height: 140px;
+  width: 140px;
+  padding: 40px 0px 0px 0px;
   position: relative;
   top: 100px;
   left: 90px;
@@ -26,7 +26,7 @@ h2 {
   text-align: center;
   padding-bottom: 5px;
   position: relative;
-  bottom: 80px;
+  bottom: 102px;
   left: 70px;
   font-family: "Gochi Hand";
   font-size: 20px;
@@ -81,11 +81,11 @@ form {
 .border-actual-img {
   border: solid 3px #132743;
   border-radius: 50%;
-  height: 190px;
-  width: 190px;
+  height: 200px;
+  width: 200px;
   position: relative;
-  left: 205px;
-  bottom: 90px;
+  left: 220px;
+  bottom: 105px;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
 }
 
@@ -105,7 +105,7 @@ form {
   text-align: center;
   position: relative;
   left: 70px;
-  bottom: 85px;
+  bottom: 118px;
   font-family: "Gochi Hand";
 }
 
@@ -126,7 +126,7 @@ form {
   margin-top: 3px;
   position: relative;
   left: 98px;
-  bottom: 85px;
+  bottom: 118px;
   font-size: 20px;
   font-family: "Gochi Hand";
 }

@@ -93,7 +93,7 @@ function displayForecast(response) {
        }" width="70px"> </div>
        </div>
         <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"><strong>
+          <span class="weather-forecast-temperature-max">🌡️<strong>
              ${Math.round(forecastDay.temp.max)}°</strong></span>
           <span class="weather-forecast-temperature-min">/${Math.round(
             forecastDay.temp.min
@@ -132,9 +132,9 @@ function showWeather(response) {
   celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = `<strong>${response.data.name}</strong>, ${response.data.sys.country}`;
-  currentTemperature.innerHTML = `<strong>${Math.round(
+  currentTemperature.innerHTML = `<small>🌡️</small> <strong>${Math.round(
     response.data.main.temp
-  )}</strong> C°`;
+  )}</strong>°C`;
   humidity.innerHTML = `<strong>Humidity</strong>:💧${response.data.main.humidity}%`;
   windSpeed.innerHTML = `<strong>Wind:</strong>🍃${Math.round(
     response.data.wind.speed
@@ -142,7 +142,7 @@ function showWeather(response) {
   weatherDescription.innerHTML = response.data.weather[0].description;
   currentTimeDate.innerHTML = formatDate(response.data.dt * 1000);
   mainIcon.src = `${iconMap[weatherCondition]}`;
-  console.log(weatherCondition);
+  console.log(response);
 
   if (
     nightIcon === "01n" ||
@@ -205,7 +205,9 @@ function showFahrenheitTemperature(event) {
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  currentTemperature.innerHTML = `${Math.round(fahrenheitTemperature)} °F`;
+  currentTemperature.innerHTML = `<small>🌡️</small> <strong>${Math.round(
+    fahrenheitTemperature
+  )}</strong>°F`;
 }
 
 function showCelsiusTemperature(event) {
@@ -213,7 +215,9 @@ function showCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   let currentTemperature = document.querySelector("#temp");
-  currentTemperature.innerHTML = `${Math.round(celsiusTemperature)} °C`;
+  currentTemperature.innerHTML = `<small>🌡️</small> <strong>${Math.round(
+    celsiusTemperature
+  )}</strong>°C`;
 }
 
 //Global variables
