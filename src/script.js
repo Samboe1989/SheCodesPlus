@@ -132,7 +132,7 @@ function showWeather(response) {
   celsiusTemperature = response.data.main.temp;
 
   currentCity.innerHTML = `<strong>${response.data.name}</strong>, ${response.data.sys.country}`;
-  currentTemperature.innerHTML = `<small>🌡️</small> <strong>${Math.round(
+  currentTemperature.innerHTML = `<small>🌡️</small><strong>${Math.round(
     response.data.main.temp
   )}</strong>°C`;
   humidity.innerHTML = `<strong>Humidity</strong>:💧${response.data.main.humidity}%`;
