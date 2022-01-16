@@ -26,8 +26,8 @@ h2 {
   text-align: center;
   padding-bottom: 5px;
   position: relative;
-  bottom: 102px;
-  left: 70px;
+  bottom: 100px;
+  left: 60px;
   font-family: "Gochi Hand";
   font-size: 20px;
   font-weight: 17px;
@@ -43,7 +43,7 @@ form {
   font-family: "Gochi Hand";
   color: #132743;
   position: relative;
-  bottom: 15px;
+  bottom: 17px;
   font-size: 15px;
 }
 
@@ -108,8 +108,8 @@ form {
   width: 350px;
   text-align: center;
   position: relative;
-  left: 60px;
-  bottom: 118px;
+  left: 62px;
+  bottom: 112px;
   font-family: "Gochi Hand";
 }
 
@@ -125,12 +125,12 @@ form {
   border: solid 2px #132743;
   background-color: #badbc9;
   border-radius: 3%;
-  width: 280px;
+  width: 260px;
   text-align: center;
   margin-top: 3px;
   position: relative;
-  left: 98px;
-  bottom: 118px;
+  left: 107px;
+  bottom: 110px;
   font-size: 20px;
   font-family: "Gochi Hand";
 }
