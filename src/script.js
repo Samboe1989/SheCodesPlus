@@ -158,13 +158,13 @@ function showWeather(response) {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.add("nightLight");
-    message.innerHTML = "Have a good night Júlia! 🌙";
+    message.innerHTML = "Have a good night! 🌙";
   } else {
     document.querySelector(".backGround").style.backgroundImage =
       "url('images/nightbackground.jpg')";
     backGroundImg.classList.remove("nightlight");
     backGroundImg.classList.add("daylight");
-    message.innerHTML = "Have a good Day Júlia! 😊";
+    message.innerHTML = "Have a nice day! 😊";
   }
 
   getForecast(response.data.coord);
@@ -172,11 +172,15 @@ function showWeather(response) {
 
 //Image map
 
-function searchCity(event) {
-  event.preventDefault();
-  let searchCity = document.querySelector("#cityInput").value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity},&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#cityInput");
+  search(cityInputElement.value);
 }
 
 // Get current Location
@@ -192,8 +196,6 @@ function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
-
-navigator.geolocation.getCurrentPosition(showLocation);
 
 //convert fahrenheit to celcius
 
@@ -239,7 +241,9 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
 let form = document.querySelector("#searchForm");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#currentLocationButton");
 currentButton.addEventListener("click", getLocation);
+
+search("Barcelona");
