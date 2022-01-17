@@ -8,16 +8,15 @@ h1 {
   text-align: center;
   border: solid 3px #132743;
   border-radius: 50%;
-  height: 140px;
-  width: 140px;
-  padding: 40px 0px 0px 0px;
+  height: 145px;
+  width: 145px;
+  padding: 45px 0px 0px 0px;
   position: relative;
-  top: 100px;
-  left: 80px;
+  top: 90px;
+  left: 45px;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
   font-family: "Gochi Hand";
   color: #132743;
-  text-decoration: none;
 }
 
 h2 {
@@ -91,13 +90,6 @@ form {
   left: 210px;
   bottom: 105px;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/022/091/original/background3.jpg?1638638762");
-}
-
-.actual-temp {
-  position: relative;
-  right: 30px;
-  bottom: 20px;
-  border-radius: 3%;
 }
 
 .actual-humwin {
